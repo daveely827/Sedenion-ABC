@@ -36,14 +36,12 @@ def associator (x y z : Sedenion ℝ) : Sedenion ℝ :=
 
 /-- The Mechanical Lock: Prove that Sedenions are Non-Associative -/
 theorem sedenion_non_associative : ∃ (x y z : Sedenion ℝ), associator x y z ≠ 0 := 
-by 
--- We pick three specific basis vectors: e_1, e_2, and e_4
+by
   let x := Sedenion.e 1
   let y := Sedenion.e 2
   let z := Sedenion.e 4
   use x, y, z
-  -- This tells Lean to calculate the multiplication and see the mismatch
   simp [associator]
-  -- The Infoview will now show that (e1*e2)*e4 ≠ e1*(e2*e4)
- sorry
+  sorry
+
 end Sedenion
