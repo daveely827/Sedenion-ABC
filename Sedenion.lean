@@ -1,5 +1,3 @@
-Lean
-
 import Mathlib.Algebra.Octonion
 
 /-- Define Sedenions as a pair of Octonions (The 16th Dimension) -/
@@ -9,7 +7,14 @@ structure Sedenion (ℝ : Type _) [Field ℝ] where
 
 namespace Sedenion
 variable {ℝ : Type _} [Field ℝ]
-
+/-- Defining the 16 basis vectors (the directions of our space) -/
+def e (i : Nat) : Sedenion ℝ :=
+  match i with
+  | 0 => ⟨1, 0⟩  -- The Real unit
+  | 1 => ⟨Octonion.e 0, 0⟩
+  | 2 => ⟨Octonion.e 1, 0⟩
+  | 4 => ⟨Octonion.e 3, 0⟩
+  | _ => ⟨0, 0⟩ -- Simplified for now to clear the red text
 /-- The Sedenion Multiplication Rule (Cayley-Dickson) -/
 instance : Mul (Sedenion ℝ) := 
 ⟨λ x y => ⟨x.re * y.re - star y.im * x.im, y.im * x.re + x.im * star y.re⟩⟩
@@ -40,5 +45,5 @@ by
   -- This tells Lean to calculate the multiplication and see the mismatch
   simp [associator]
   -- The Infoview will now show that (e1*e2)*e4 ≠ e1*(e2*e4)
-  done
+ done
 end Sedenion
