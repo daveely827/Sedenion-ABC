@@ -53,3 +53,5 @@ def adelic_inner_product (x y : Sedenion ℝ) : ℝ :=
 def arithmetic_dirac (ψ : Sedenion ℝ) : Sedenion ℝ :=
   ⟨ψ.re, -ψ.im⟩ -- The reflection that detects arithmetic curvature
 end Sedenion
+#print axioms existence_of_friction
+#print axioms sedenion_non_associative
