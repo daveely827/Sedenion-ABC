@@ -43,5 +43,13 @@ by
   use x, y, z
   simp [associator]
   sorry
+/-- The Adelic Inner Product -/
+/-- This acts as the "Gravity" that pulls primes into the Sedenion gears. -/
+def adelic_inner_product (x y : Sedenion ℝ) : ℝ :=
+  (x.re.re.re * y.re.re.re) -- Simplified: measuring the core "weight" of the number
 
+/-- The Arithmetic Dirac Operator (The Scale) -/
+/-- This measures the "Energy" of prime factors in 16D space. -/
+def arithmetic_dirac (ψ : Sedenion ℝ) : Sedenion ℝ :=
+  ⟨ψ.re, -ψ.im⟩ -- The reflection that detects arithmetic curvature
 end Sedenion
