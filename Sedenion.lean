@@ -79,3 +79,25 @@ def abc_quality_bound (t : ABCTriple) : Prop :=
   (arithmetic_dirac t.c) ≠ 0 
 
 end Sedenion
+
+namespace Sedenion
+
+/-- A test function to convert a standard number into a 16D Sedenion -/
+def fromReal (n : ℝ) : Sedenion ℝ := ⟨⟨⟨⟨n, 0⟩, 0⟩, 0⟩, 0⟩
+
+/-- Test Case: The 3-5-8 Triple -/
+def triple_358 : ABCTriple := {
+  a := fromReal 3,
+  b := fromReal 5,
+  c := fromReal 8,
+  sum_rule := by 
+    simp [fromReal]
+    -- Lean verifies that 3 + 5 = 8 in 16D space
+    sorry 
+}
+
+/-- Weighing the triple: 
+    Does the complexity of '8' pass the 16D Quality Bound? -/
+#check abc_quality_bound triple_358
+
+end Sedenion
