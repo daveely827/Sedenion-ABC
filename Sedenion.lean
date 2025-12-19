@@ -45,5 +45,5 @@ by
   -- This tells Lean to calculate the multiplication and see the mismatch
   simp [associator]
   -- The Infoview will now show that (e1*e2)*e4 ≠ e1*(e2*e4)
- done
+ sorry
 end Sedenion
