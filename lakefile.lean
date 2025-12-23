@@ -7,5 +7,4 @@ package «sedenion-abc» where
 lean_lib «SedenionABC» where
   -- Settings go here
 
-require mathlib from git
-  "https://github.com/leanprover-community/mathlib4.git"
+require mathlib from git "" @ "v4.11.0"

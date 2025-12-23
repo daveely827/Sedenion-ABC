@@ -5,6 +5,8 @@ structure Sedenion (ℝ : Type _) [Field ℝ] where
   (re : Octonion ℝ)
   (im : Octonion ℝ)
 
+  
+
 namespace Sedenion
 variable {ℝ : Type _} [Field ℝ]
 
@@ -18,16 +20,16 @@ def e (i : Nat) : Sedenion ℝ :=
   | _ => ⟨0, 0⟩
 
 -- 2. THE ENGINE (Cayley-Dickson Multiplication)
-instance : Mul (Sedenion ℝ) := 
+instance : Mul (Sedenion ℝ) :=
 ⟨λ x y => ⟨x.re * y.re - star y.im * x.im, y.im * x.re + x.im * star y.re⟩⟩
 
-instance : Add (Sedenion ℝ) := 
+instance : Add (Sedenion ℝ) :=
 ⟨λ x y => ⟨x.re + y.re, x.im + y.im⟩⟩
 
-instance : Neg (Sedenion ℝ) := 
+instance : Neg (Sedenion ℝ) :=
 ⟨λ x => ⟨-x.re, -x.im⟩⟩
 
-instance : Sub (Sedenion ℝ) := 
+instance : Sub (Sedenion ℝ) :=
 ⟨λ x y => ⟨x.re - y.re, x.im - y.im⟩⟩
 
 -- 3. THE FRICTION (Zero Divisor Logic)
@@ -42,7 +44,7 @@ lemma friction_at_coordinates : x_gear * y_gear = 0 := by sorry
 theorem existence_of_friction : ∃ (x : Sedenion ℝ), IsZeroDivisor x := by
   use x_gear
   constructor
-  · intro h; injection h 
+  · intro h; injection h
   · use y_gear
     constructor
     · intro h; injection h
@@ -62,10 +64,10 @@ theorem sedenion_non_associative : ∃ (x y z : Sedenion ℝ), associator x y z 
 -- 5. THE SCALE (Dirac Operator & Spectral Gap)
 def arithmetic_dirac (ψ : Sedenion ℝ) : Sedenion ℝ := ⟨ψ.re, -ψ.im⟩
 
-def spectral_gap : ℝ := 1 
+def spectral_gap : ℝ := 1
 
 /-- The Gap Theorem: 16D Rigidity forces quantized energy levels -/
-theorem abc_spectral_bound (abc_triple : Sedenion ℝ) : 
+theorem abc_spectral_bound (abc_triple : Sedenion ℝ) :
   (arithmetic_dirac abc_triple) ≠ 0 → True := by sorry
 
 -- 6. THE ABC CONNECTION
@@ -76,7 +78,7 @@ structure ABCTriple where
   sum_rule : a + b = c
 
 def abc_quality_bound (t : ABCTriple) : Prop :=
-  (arithmetic_dirac t.c) ≠ 0 
+  (arithmetic_dirac t.c) ≠ 0
 
 end Sedenion
 
@@ -90,13 +92,13 @@ def triple_358 : ABCTriple := {
   a := fromReal 3,
   b := fromReal 5,
   c := fromReal 8,
-  sum_rule := by 
+  sum_rule := by
     simp [fromReal]
     -- Lean verifies that 3 + 5 = 8 in 16D space
-    sorry 
+    sorry
 }
 
-/-- Weighing the triple: 
+/-- Weighing the triple:
     Does the complexity of '8' pass the 16D Quality Bound? -/
 #check abc_quality_bound triple_358
 
