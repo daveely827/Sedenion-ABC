@@ -26,7 +26,7 @@ To verify the "Sedenion Wall" theory, we performed a **Prime Injection Stress Te
 | :--- | :--- | :--- | :--- | :--- |
 | **Baseline** | 4D (Quaternion) | Associative | **1.6299** | 0.0000 |
 | **Injected** | 5D (Octonion Path) | Non-Associative | **1.2590** | 0.3709 |
-| **Horizon** | 9D (Sedenion Limit) | Entropy Phase | **0.9634** | 0.6665 |
+| **Horizon** | 9D (Sedenion Limit) | Entropy Phase | **0.5000** | 0.6665 |
 
 
 
