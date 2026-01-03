@@ -73,3 +73,15 @@ By formalizing the **Non-Alternative** property in `SedenionProperties.lean`, we
 
 ### 3. Safety Interlocks
 The Lean 4 proofs act as a "Pre-Flight Check." The engine will not "fire" if the coordinates represent a Zero Divisor kernel, protecting the craft from "Arithmetic Friction."
+
+## 🚀 Sedenion Technology & Applications
+This repository serves as a foundational library for 16D Manifold Navigation.
+
+### 1. Space-Time Folding (Warp Theory)
+Using the `SedenionPhysics.lean` module, we define "Stability Zones" that avoid Zero Divisors. This ensures the integrity of a warp bubble by preventing "Norm Leakage" during trans-dimensional jumps.
+
+### 2. Causal Anchoring (Temporal Logic)
+By formalizing the **Non-Alternative** property in `SedenionProperties.lean`, we create a framework for non-linear causality, allowing for the simulation of time-travel paths that remain mathematically consistent (paradox-free).
+
+### 3. Safety Interlocks
+The Lean 4 proofs act as a "Pre-Flight Check." The engine will not "fire" if the coordinates represent a Zero Divisor kernel, protecting the craft from "Arithmetic Friction."
